@@ -33,6 +33,14 @@ tasks.withType<KotlinCompile> {
 	}
 }
 
+tasks.getByName<Jar>("jar") {
+	enabled = false
+	manifest {
+		attributes["Main-Class"] = "eam.edu.ingesoft.onlinestore.OnlinestoreApplication"
+	}
+}
+
+
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
